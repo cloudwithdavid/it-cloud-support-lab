@@ -1,55 +1,45 @@
 # Example Ticket 01 — [Issue Title]
 
-## Scenario
+## Summary
 
-[Brief description of the issue.]
+[Issue restatement.]
 
-## Problem Summary
+## Issue
 
-[One-sentence restatement of the issue.]
+[What is happening and why it matters.]
 
-## Scope
+## Hypotheses
 
-- affected user(s):
-- affected device(s):
-- affected service(s):
-- business impact:
-
-## Initial Hypotheses
+[Plausible causes based on the issue.]
 
 1. 
 2. 
 3. 
 
-## First Checks Chosen
+## Checks
 
-1. 
-2. 
-3. 
-4. 
-5. 
-
-## Findings
+[What was checked and the findings.]
 
 - 
 - 
 - 
 
-## Resolution Path
+## Resolution
 
-[What was done or what should be done.]
+[What was done, or what the best-supported next path was.]
 
 ## Verification
 
-[How success was confirmed.]
+[How the outcome was confirmed.]
 
-## Escalation Threshold
+## Escalation
 
-[What would make this ticket require escalation.]
+[Whether escalation was needed, and why.]
 
-## What This Ticket Demonstrates
+## Prevention
 
-- triage
-- troubleshooting logic
-- documentation clarity
-- support judgment
+[KB candidate or prevention note.]
+
+## Debrief
+
+[Brief reflection on reasoning and takeaway.]

@@ -19,6 +19,7 @@ This lab is designed to show competence in:
 - forming reasonable hypotheses
 - choosing useful first checks
 - documenting findings clearly
+- troubleshooting common support issues
 - resolving common issues when appropriate
 - escalating with useful context when needed
 
