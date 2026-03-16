@@ -21,14 +21,16 @@ A strong support case should show:
 
 - clear problem framing
 - sensible hypotheses
-- well-ordered checks
-- useful findings
+- useful checks and findings
 - justified resolution or escalation
-- documentation another tech could follow
+- clear verification
+- a debrief that captures the lesson from the case
 
 ## What This Workflow Trains
 
 - support judgment
-- troubleshooting discipline
+- triage
+- troubleshooting logic
 - documentation clarity
-- escalation quality
+- escalation discipline
+- reusable learning
