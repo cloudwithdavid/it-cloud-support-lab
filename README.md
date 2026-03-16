@@ -1,27 +1,17 @@
 # Ticketing Lab
 
-A Jira-based IT support lab built to demonstrate structured case handling, triage reasoning, documentation quality, and troubleshooting process.
-
-## What This Project Demonstrates
-
-This lab is designed to show competence in:
-
-- support case handling
-- issue triage
-- structured troubleshooting
-- documentation quality
-- resolution vs escalation judgment
-- knowledge capture through KBs and runbooks
+A Jira-based IT support lab built to develop and demonstrate support case handling through structured tickets, triage reasoning, troubleshooting process, and documentation.
 
 ## Core Skills Practiced
 
-- turning vague user problems into structured support cases
-- forming reasonable hypotheses
-- choosing useful first checks
-- documenting findings clearly
+- turning vague user issues into structured support cases
+- forming and narrowing likely causes
+- choosing useful diagnostic checks
 - troubleshooting common support issues
+- documenting reasoning, findings, and outcomes clearly
 - resolving common issues when appropriate
 - escalating with useful context when needed
+- extracting reusable knowledge from worked cases
 
 ## Repository Structure
 
@@ -31,17 +21,6 @@ This lab is designed to show competence in:
 - `docs/runbooks/` → operational guides and triage decision frameworks
 - `assets/screenshots/` → supporting visuals from the Jira lab
 
-## Current Scope
-
-This lab focuses on learning how to execute support work properly:
-
-- case intake
-- triage
-- documentation
-- troubleshooting logic
-- verification
-- escalation discipline
-
 ## Goal
 
-The goal is to build support competence through structured case handling.
+The goal is to build and demonstrate support competence through repeated structured case handling.
