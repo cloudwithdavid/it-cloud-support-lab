@@ -1,6 +1,6 @@
-# Ticketing Lab
+# IT / Cloud Support Lab
 
-A Jira-based IT support lab built to develop and demonstrate support case handling through structured tickets, triage reasoning, troubleshooting process, and documentation.
+This lab uses structured Jira tickets to develop and demonstrate IT and cloud support skills through triage reasoning, troubleshooting, documentation, escalation, and repeatable case handling.
 
 ## Core Skills Practiced
 
