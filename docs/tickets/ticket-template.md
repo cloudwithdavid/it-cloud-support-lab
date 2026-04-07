@@ -25,9 +25,9 @@
 3. [check]
    - finding:
 
-## Resolution
+## Resolution / Next Path
 
-[ What fixed the issue and by what action, or what the best-supported next path was.]
+[What fixed the issue, or what the best-supported next path was.]
 
 ## Verification
 

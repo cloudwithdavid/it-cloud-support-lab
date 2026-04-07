@@ -1,6 +1,6 @@
 # Runbook — [Runbook Title]
 
-> Learning runbook created in a simulated support lab.
+> Runbook created in a simulated support lab.
 
 ## Purpose
 
@@ -55,6 +55,6 @@
 - Decision reasoning with justification
 - Verification or next action
 
-## Notes for Learners
+## Notes
 
 [What this runbook teaches about support flow, decision-making, or escalation discipline.]

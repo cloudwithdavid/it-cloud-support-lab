@@ -2,17 +2,19 @@
 
 ## Purpose
 
-This workflow defines how each case is worked in the lab. The goal is to practice support thinking.
+This workflow defines how each case is worked in the lab. Its purpose is to practice structured support reasoning, documentation, and escalation judgment.
 
 ## Core Loop
 
-1. perform a first-pass RCHCD attempt
-2. review and critique the reasoning
-3. convert the refined reasoning into a cleaner ticket record
-4. question the ticket to understand the checks, findings, resolution, escalation logic, and verification
-5. debrief the case and capture the lesson
+1. perform first-pass reasoning on the case
+2. review and tighten the reasoning through guided critique
+3. question the checks, findings, resolution, and escalation logic
+4. revise the ticket write-up
+5. finalize the case record and capture the lesson
 
 ## RCHCD
+
+> First-pass reasoning framework
 
 ### Restate
 
@@ -32,11 +34,7 @@ Choose the highest-yield next checks and state what each one would help rule in 
 
 ### Decide
 
-Determine the most justified next direction: resolve, continue investigating, or escalate.
-
-### Debrief
-
-Summarize what the case taught, including what mattered most and what would be done better next time.
+Determine the most likely justified next direction: resolve, continue investigating, or escalate.
 
 ## What Good Execution Looks Like
 

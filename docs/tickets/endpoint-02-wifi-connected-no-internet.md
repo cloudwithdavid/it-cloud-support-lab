@@ -11,7 +11,7 @@ Single user on a Windows endpoint is unable to access any internet-dependent sit
 ## Hypotheses
 
 1. Device is connected to the wrong SSID or is not fully connected
-2. Device has invalid IP/DHCP configuration
+2. Device has invalid IP configuration
 3. Device cannot reach the default gateway
 4. DNS resolution is failing while basic connectivity still works
 
@@ -40,7 +40,7 @@ Single user on a Windows endpoint is unable to access any internet-dependent sit
 
 ## Resolution
 
-DNS resolution was failing on the endpoint despite valid IP configuration and working connectivity to the gateway and a public IP. Reviewed adapter settings, restored DNS configuration to automatic, refreshed the connection, and confirmed DNS queries and internet access were working normally.
+DNS resolution was failing on the endpoint despite valid IP configuration and working connectivity to the gateway and a public IP. Disconnected and reconnected the Wi-Fi adapter to refresh local network state, then confirmed DNS queries and internet access were working normally.
 
 ## Verification
 

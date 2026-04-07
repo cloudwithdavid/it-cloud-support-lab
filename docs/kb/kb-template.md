@@ -1,6 +1,6 @@
 # KB — [Issue Title]
 
-> Learning KB created in a simulated support lab.
+> Knowledge Base created in a simulated support lab.
 
 ## Purpose
 
@@ -16,7 +16,7 @@
 -
 -
 
-## Likely Hypotheses
+## Likely Causes
 
 -
 -
@@ -26,20 +26,17 @@
 
 1. [check]
    - Why it matters:
-   - What success would suggest:
-   - What failure would suggest:
+   - What the result suggests:
 
 2. [check]
    - Why it matters:
-   - What success would suggest:
-   - What failure would suggest:
+   - What the result suggests:
 
 3. [check]
    - Why it matters:
-   - What success would suggest:
-   - What failure would suggest:
+   - What the result suggests:
 
-## Example Resolution
+## Typical Resolution
 
 1.
 2.
