@@ -39,7 +39,7 @@
 
 ## Prevention
 
-[Optional prevention note, repeat-pattern note, or future KB candidate note.]
+[Optional prevention note or repeat-pattern note]
 
 ## Debrief
 
