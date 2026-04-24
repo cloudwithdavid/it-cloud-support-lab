@@ -1,5 +1,5 @@
 # Support Engineering Lab
-
+<!--
 - [About](#about)
 - [What This Lab Demonstrates](#what-this-lab-demonstrates)
   - [Support Case Handling](#support-case-handling)
@@ -12,45 +12,39 @@
   - [Bash Scripts](#bash-scripts)
   - [Python Scripts](#python-scripts)
 - [Repository Structure](#repository-structure)
-
+-->
 ## About
 
-This is a support engineering lab with a focus on operations and automation, built around simulated ticket case handling and support-oriented Bash/Python tooling.
+This is a support engineering lab with a focus on operations and automation, built around simulated ticket case handling, and support-oriented Bash/Python tooling.
 
-Its purpose is to develop support judgment, troubleshooting workflow, documentation clarity, and small operational utilities that make common support work more technical and repeatable.
+Its purpose is to develop support judgment, practical CLI use, troubleshooting workflow, documentation clarity, and small operational utilities that make common support work more technical and repeatable.
 
 The lab combines two connected layers of practice:
 
-- **support case handling** through tickets, KB articles, and runbooks
+- **support case handling** through tickets, KB articles, runbooks, and practical CLI troubleshooting
 - **support-oriented tooling** through Bash and Python scripts tied to troubleshooting and evidence-gathering tasks
-
-Selected Linux and networking cases are intentionally paired with Bash or Python scripts where scripting can support a bounded part of the troubleshooting workflow.
 
 ## What This Lab Demonstrates
 
 ### Support Case Handling
 
-- structured support case analysis and troubleshooting practice through triage, hypotheses, checks, and escalation judgment
-- clear documentation of reasoning, outcomes, and lessons learned
-- development of reusable support artifacts such as tickets, KB articles, and runbooks
+- structured support case analysis through realistic scenarios, issue patterns, and troubleshooting paths
+- practical CLI troubleshooting used to support case investigation
+- reusable support documentation that captures reasoning, outcomes, handoff decisions, and lessons learned
 
 ### Support-Oriented Tooling
 
 - log, service, and health-oriented check creation
 - technical evidence collection, formatting, and organization for ticket documentation
-- repetitive task automation with lightweight Bash and Python scripting
+- repetitive task automation tied to Linux and networking cases using Bash and Python scripting
 
-## Case Handling Workflow
+## Support Case Workflow
 
-Each case is worked through in a guided loop:
+Cases are worked through as guided support scenarios.
 
-1. perform first-pass reasoning on the case
-2. review and tighten the reasoning through guided critique
-3. question the checks, findings, resolution, and escalation logic
-4. revise the ticket write-up
-5. finalize the case record and capture the lesson
+Each case starts with a realistic ticket briefing, then moves through the relevant issue pattern, troubleshooting path, documentation logic, and possible escalation decision. Final artifacts are rewritten in clear junior-level support wording to show the symptom, checks, findings, outcome, and lesson learned.
 
-This workflow is intended to build troubleshooting skill through structured support thinking.
+This keeps the lab focused on support judgment, troubleshooting workflow, documentation clarity, and practical tooling.
 
 ## Artifacts
 
@@ -62,6 +56,7 @@ Primary case-handling records used to practice issue framing, classification, hy
 - [`windows-endpoint/no-internet-dns-failure.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/no-internet-dns-failure.md)
 - [`identity-access/password-reset-access-loss.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/password-reset-access-loss.md)
 - [`identity-access/account-unlock-root-cause.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/account-unlock-root-cause.md)
+- [`microsoft-365/m365-license-assignment.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/m365-license-assignment.md)
 
 ### KB Articles
 
