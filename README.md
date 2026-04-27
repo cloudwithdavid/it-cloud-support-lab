@@ -54,11 +54,12 @@ This keeps the lab focused on support judgment, troubleshooting workflow, docume
 Primary case-handling records used to practice issue framing, classification, hypotheses, checks, resolution versus escalation decisions, verification, and debriefing.
 
 - [`linux/service-will-not-start.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/linux/service-will-not-start.md)
-- [`windows-endpoint/slow-pc.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/slow-pc.md)
-- [`windows-endpoint/no-internet-dns-failure.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/no-internet-dns-failure.md)
 - [`identity-access/password-reset-access-loss.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/identity-access/password-reset-access-loss.md)
 - [`identity-access/account-unlock-root-cause.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/identity-access/account-unlock-root-cause.md)
-- [`microsoft-365/m365-license-assignment.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/microsoft-365/m365-license-assignment.md)
+- [`windows-endpoint/no-internet-dns-failure.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/no-internet-dns-failure.md)
+- [`windows-endpoint/application-install-blocked.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/application-install-blocked.md)
+- [`windows-endpoint/slow-pc.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/slow-pc.md)
+- [`microsoft-365/m365-license-assignment.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/microsoft-365/M365-license-assignment.md)
 
 ### KB Articles
 
