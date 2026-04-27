@@ -1,4 +1,4 @@
-# Support Engineering Lab
+# Support Engineering Lab <img src="docs/assets/status-active-lab.gif" alt="Status: active lab" align="right" width="100">
 <!--
 - [About](#about)
 - [What This Lab Demonstrates](#what-this-lab-demonstrates)
@@ -48,6 +48,8 @@ Each case starts with a realistic ticket briefing, then moves through the releva
 This keeps the lab focused on support judgment, troubleshooting workflow, documentation clarity, and practical tooling.
 
 ## Artifacts
+
+> This is an active lab. New items are being added as the lab develops.
 
 ### Tickets
 
