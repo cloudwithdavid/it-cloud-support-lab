@@ -1,18 +1,4 @@
 # Support Engineering Lab
-<!--
-- [About](#about)
-- [What This Lab Demonstrates](#what-this-lab-demonstrates)
-  - [Support Case Handling](#support-case-handling)
-  - [Support-Oriented Tooling](#support-oriented-tooling)
-- [Case Handling Workflow](#case-handling-workflow)
-- [Artifacts](#artifacts)
-  - [Tickets](#tickets)
-  - [KB Articles](#kb-articles)
-  - [Runbooks](#runbooks)
-  - [Bash Scripts](#bash-scripts)
-  - [Python Scripts](#python-scripts)
-- [Repository Structure](#repository-structure)
--->
 
 ## ℹ️ About
 
@@ -23,7 +9,7 @@ Its purpose is to develop support judgment, practical CLI use, troubleshooting w
 The lab combines two connected layers of practice:
 
 - **support case handling** through tickets, KB articles, runbooks, and practical CLI troubleshooting
-- **support-oriented tooling** through Bash and Python scripts tied to troubleshooting and evidence-gathering tasks
+- **support-oriented tooling** through Bash and Python scripts tied to troubleshooting workflows
 
 ## 🧪 What This Lab Demonstrates
 

@@ -31,6 +31,16 @@ User reports the Lantern internal dashboard is unavailable. The issue appears to
 5. Check directory usage with `du -h --max-depth=1 [path]`
    - finding: `/var/log/lantern` is using most of the space under `/var`.
 
+> **Related Tooling**
+>
+> [`evidence-collect.sh`](../../../tools/bash/evidence-collect.sh) supports this case by collecting first-pass Linux evidence that matches checks 2–4:
+>
+> - service status with `systemctl status`
+> - recent service logs with `journalctl -u`
+> - filesystem usage with `df -h`
+>
+> In this case, the journal logs and filesystem usage output would quickly point toward disk pressure as the likely cause. The script does not replace the full troubleshooting path. In this case, `du -h --max-depth=1 [path]` was still needed as a manual follow-up to narrow where disk usage was concentrated after `df -h` showed filesystem pressure.
+
 ## Resolution
 
 > **Action sequence:**

@@ -27,6 +27,16 @@ User reports they can SSH into the Harbor Notes build server and that the server
 3. Review routing table with `ip route`
     - finding: Default route points to an invalid gateway for the server’s network.
 
+> **Related Tooling**
+>
+> [`evidence-collect.sh`](../../../tools/bash/evidence-collect.sh) supports this case by collecting first-pass network evidence that matches the main checks:
+>
+> - routing table output with `ip route`
+> - external IP reachability with `ping`
+> - external URL reachability with `curl`
+>
+> In this case, the routing table and external reachability output would help show the asymmetric failure pattern: internal access works, but outbound internet access fails. That evidence supports the finding that the issue was caused by an invalid default route gateway.
+
 ## Resolution
 
 > **Action sequence:**
