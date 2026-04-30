@@ -1,9 +1,5 @@
-tools/bash/*
-tools/python/*
-tools/samples/*
 tools/README.md
 artifact-queue.md
-
 
 !tools/bash/.gitkeep
 !tools/python/.gitkeep
