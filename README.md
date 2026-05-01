@@ -41,21 +41,21 @@ This keeps the lab focused on support judgment, troubleshooting workflow, docume
 
 Primary case-handling records used to practice issue framing, classification, hypotheses, checks, resolution versus escalation decisions, verification, and debriefing.
 
-- [`networking/invalid-default-route.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/networking/invalid-default-route.md)
-- [`linux/service-will-not-start.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/linux/service-will-not-start.md)
-- [`identity-access/password-reset-access-loss.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/identity-access/password-reset-access-loss.md)
-- [`identity-access/account-unlock-root-cause.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/identity-access/account-unlock-root-cause.md)
-- [`windows-endpoint/no-internet-dns-failure.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/no-internet-dns-failure.md)
-- [`windows-endpoint/application-install-blocked.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/application-install-blocked.md)
-- [`windows-endpoint/slow-pc.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/windows-endpoint/slow-pc.md)
-- [`microsoft-365/m365-license-assignment.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/tickets/microsoft-365/M365-license-assignment.md)
+- [`networking/invalid-default-route.md`](docs/tickets/networking/invalid-default-route.md)
+- [`linux/service-will-not-start.md`](docs/tickets/linux/service-will-not-start.md)
+- [`identity-access/password-reset-access-loss.md`](docs/tickets/identity-access/password-reset-access-loss.md)
+- [`identity-access/account-unlock-root-cause.md`](docs/tickets/identity-access/account-unlock-root-cause.md)
+- [`windows-endpoint/no-internet-dns-failure.md`](docs/tickets/windows-endpoint/no-internet-dns-failure.md)
+- [`windows-endpoint/application-install-blocked.md`](docs/tickets/windows-endpoint/application-install-blocked.md)
+- [`windows-endpoint/slow-pc.md`](docs/tickets/windows-endpoint/slow-pc.md)
+- [`microsoft-365/m365-license-assignment.md`](docs/tickets/microsoft-365/M365-license-assignment.md)
 
 ### 📚 KB Articles
 
 Reusable references that document repeatable issue patterns for future support work.
 
-- [`no-internet-dns-failure.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/kb/no-internet-dns-failure.md)
-- [`password-reset-access-loss.md`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/docs/kb/password-reset-access-loss.md)
+- [`no-internet-dns-failure.md`](docs/kb/no-internet-dns-failure.md)
+- [`password-reset-access-loss.md`](docs/kb/password-reset-access-loss.md)
 
 ### 📋 Runbooks
 
@@ -67,7 +67,7 @@ Stepwise operational guides that standardize repeated support workflows and esca
 
 Bash scripts used to reduce repetitive manual troubleshooting work.
 
-- [`evidence-collect.sh`](https://github.com/cloudwithdavid/support-eng-lab/blob/main/tools/bash/evidence-collect.sh)
+- [`evidence-collect.sh`](tools/bash/evidence-collect.sh)
 
 ### 🐍 Python Scripts
 
@@ -77,11 +77,11 @@ Python scripts used to automate support and troubleshooting tasks.
 
 ## 🗂️ Repository Structure
 
-- [`docs/tickets/`](https://github.com/cloudwithdavid/support-eng-lab/tree/main/docs/tickets) → simulated support cases
-- [`docs/kb/`](https://github.com/cloudwithdavid/support-eng-lab/tree/main/docs/kb) → KB articles for repeatable issue patterns
-- [`docs/runbooks/`](https://github.com/cloudwithdavid/support-eng-lab/tree/main/docs/runbooks) → runbooks for repeatable support workflows
-- [`tools/bash/`](https://github.com/cloudwithdavid/support-eng-lab/tree/main/tools/bash) → Bash scripts for common support and troubleshooting tasks
-- [`tools/python/`](https://github.com/cloudwithdavid/support-eng-lab/tree/main/tools/python) → Python scripts for common support and troubleshooting tasks
+- [`docs/tickets/`](docs/tickets/) → simulated support cases
+- [`docs/kb/`](docs/kb/) → KB articles for repeatable issue patterns
+- [`docs/runbooks/`](docs/runbooks/) → runbooks for repeatable support workflows
+- [`tools/bash/`](tools/bash/) → Bash scripts for common support and troubleshooting tasks
+- [`tools/python/`](tools/python/) → Python scripts for common support and troubleshooting tasks
 <!--
-- `tools/samples/` → sample files used for script testing
+- [`tools/samples/`](tools/samples/) → sample files used for script testing
 -->
