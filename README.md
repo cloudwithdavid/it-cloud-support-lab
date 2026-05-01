@@ -2,51 +2,36 @@
 
 ## ℹ️ About
 
-This is a support engineering lab with a focus on operations and automation, built around simulated ticket case handling, and support-oriented Bash/Python tooling.
+This is a support engineering lab focused on operations and automation, built around **simulated** support case handling and support-oriented Bash and Python tooling.
 
-Its purpose is to develop support judgment, practical CLI use, troubleshooting workflow, documentation clarity, and small operational utilities that make common support work more technical and repeatable.
+The lab develops structured troubleshooting judgment, practical CLI fluency, documentation clarity, and operational scripting that make support work more technical and repeatable.
 
-The lab combines two connected layers of practice:
-
-- **support case handling** through tickets, KB articles, runbooks, and practical CLI troubleshooting
-- **support-oriented tooling** through Bash and Python scripts tied to troubleshooting workflows
-
-## 🧪 What This Lab Demonstrates
+## 🧪 Lab Coverage
 
 ### 🔎 Support Case Handling
 
-- structured support case analysis through realistic scenarios, issue patterns, and troubleshooting paths
-- command-line checks used to gather evidence and narrow support issues
-- reusable support documentation that captures reasoning, outcomes, handoff decisions, and lessons learned
+- structured triage and troubleshooting across Linux, networking, identity, and endpoint domains
+- CLI-driven evidence gathering to isolate and document real issue patterns
+- support documentation (tickets, KB articles, and runbooks) that captures reasoning, findings, and escalation decisions in reusable form
 
 ### ⚙️ Support-Oriented Tooling
 
-- log, service, and health-oriented check creation
-- technical evidence collection, formatting, and organization for ticket documentation
-- repetitive task automation tied to Linux and networking cases using Bash and Python scripting
-
-## 🔄 Support Case Workflow
-
-Cases are worked through as guided support scenarios.
-
-Each case starts with a realistic ticket briefing, then moves through the relevant issue pattern, troubleshooting path, documentation logic, and possible escalation decision. Final artifacts are rewritten in clear junior-level support wording to show the symptom, checks, findings, outcome, and lesson learned.
-
-This keeps the lab focused on support judgment, troubleshooting workflow, documentation clarity, and practical tooling.
+- Bash and Python scripts that automate evidence collection, health checks, log analysis, and connectivity across real troubleshooting scenarios
+- Tools built to reduce repetitive manual work and produce ticket-ready output
 
 ## 📦 Artifacts
 
-### 🎫 Ticket Cases
+### 🎫 Support Cases
 
-Primary case-handling records used to practice issue framing, classification, hypotheses, checks, resolution versus escalation decisions, verification, and debriefing.
-
-- [`networking/invalid-default-route.md`](docs/tickets/networking/invalid-default-route.md)
-- [`linux/service-will-not-start.md`](docs/tickets/linux/service-will-not-start.md)
-- [`identity-access/password-reset-access-loss.md`](docs/tickets/identity-access/password-reset-access-loss.md)
-- [`identity-access/account-unlock-root-cause.md`](docs/tickets/identity-access/account-unlock-root-cause.md)
-- [`windows-endpoint/no-internet-dns-failure.md`](docs/tickets/windows-endpoint/no-internet-dns-failure.md)
-- [`windows-endpoint/application-install-blocked.md`](docs/tickets/windows-endpoint/application-install-blocked.md)
-- [`windows-endpoint/slow-pc.md`](docs/tickets/windows-endpoint/slow-pc.md)
-- [`microsoft-365/m365-license-assignment.md`](docs/tickets/microsoft-365/M365-license-assignment.md)
+Primary case-handling records used to practice issue framing, triage, troubleshooting, resolution versus escalation decisions, and documentation.
+<!-- markdownlint-disable MD060 -->
+|                                    |                                     |
+| ---------------------------------- | ----------------------------------- |
+| **Linux** | • [`service-will-not-start.md`](docs/tickets/linux/service-will-not-start.md) |
+| **Networking** | • [`invalid-default-route.md`](docs/tickets/networking/invalid-default-route.md) |
+| **Identity & Access** | • [`password-reset-access-loss.md`](docs/tickets/identity-access/password-reset-access-loss.md)<br> • [`account-unlock-root-cause.md`](docs/tickets/identity-access/account-unlock-root-cause.md)<br> • [`policy-blocked-sign-in.md`](docs/tickets/identity-access/policy-blocked-sign-in.md) |
+| **Windows Endpoint** | • [`no-internet-dns-failure.md`](docs/tickets/windows-endpoint/no-internet-dns-failure.md)<br> • [`application-install-blocked.md`](docs/tickets/windows-endpoint/application-install-blocked.md)<br> • [`slow-pc.md`](docs/tickets/windows-endpoint/slow-pc.md) |
+| **Microsoft 365** | • [`m365-license-assignment.md`](docs/tickets/microsoft-365/M365-license-assignment.md) |
 
 ### 📚 KB Articles
 
@@ -59,19 +44,19 @@ Reusable references that document repeatable issue patterns for future support w
 
 Stepwise operational guides that standardize repeated support workflows and escalation logic.
 
--
+**Planned:** `identity-sign-in-triage-runbook.md`
 
 ### 🐚 Bash Scripts
 
 Bash scripts used to reduce repetitive manual troubleshooting work.
 
-- [`evidence-collect.sh`](tools/bash/evidence-collect.sh)
+- [`evidence-collect.sh`](tools/bash/evidence-collect.sh) — reusable first-pass Linux evidence collection. Accepts an optional service name, URL, and/or IP address. Collects host, disk, service, journal, port, routing, and reachability evidence, and writes results to a timestamped file for ticket attachment or escalation reference.
 
 ### 🐍 Python Scripts
 
 Python scripts used to automate support and troubleshooting tasks.
 
--
+**Planned:** `bulk_connectivity_check.py`
 
 ## 🗂️ Repository Structure
 
