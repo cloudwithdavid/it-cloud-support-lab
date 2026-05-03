@@ -27,23 +27,22 @@ while getopts ":s:i:u:h" opt; do
       test_url="$OPTARG"
       ;;
     h)
-      echo "Usage: $0 [-s service-name] [-i external-ip] [-u test-url]"
-      echo
-      echo "Options:"
-      echo "  -s  Service name to check with systemctl and journalctl"
-      echo "  -i  External IP to test with ping. Default: 8.8.8.8"
-      echo "  -u  Test URL to check with curl. Default: https://example.com"
-      echo "  -h  Show this help message"
+      printf 'Usage: %s [-s service-name] [-i external-ip] [-u test-url]\n\n' "$0"
+      printf 'Options:\n'
+      printf '  -s  Service name to check with systemctl and journalctl\n'
+      printf '  -i  External IP to test with ping. Default: 8.8.8.8\n'
+      printf '  -u  Test URL to check with curl. Default: https://example.com\n'
+      printf '  -h  Show this help message\n'
       exit 0
       ;;
     :)
-      echo "Error: option -$OPTARG requires a value"
-      echo "Usage: $0 [-s service-name] [-i external-ip] [-u test-url]"
+      printf 'Error: option -%s requires a value\n' "$OPTARG"
+      printf 'Usage: %s [-s service-name] [-i external-ip] [-u test-url]\n' "$0"
       exit 1
       ;;
     \?)
-      echo "Error: invalid option -$OPTARG"
-      echo "Usage: $0 [-s service-name] [-i external-ip] [-u test-url]"
+      printf 'Error: invalid option -%s\n' "$OPTARG"
+      printf 'Usage: %s [-s service-name] [-i external-ip] [-u test-url]\n' "$0"
       exit 1
       ;;
   esac
@@ -60,75 +59,54 @@ output_file="${output_dir}/${file_timestamp}-${current_host}.txt"
 
 : > "$output_file"
 
-echo "--- Collecting Evidence ---" | tee -a "$output_file"
-echo "Timestamp: $timestamp" | tee -a "$output_file"
-echo "Host: $current_host" | tee -a "$output_file"
-echo "User: $current_user" | tee -a "$output_file"
+printf '%s\n' "--- Collecting Evidence ---" | tee -a "$output_file"
+printf 'Timestamp: %s\n' "$timestamp" | tee -a "$output_file"
+printf 'Host: %s\n' "$current_host" | tee -a "$output_file"
+printf 'User: %s\n' "$current_user" | tee -a "$output_file"
 
 if [[ -n "$service_name" ]]; then
-  echo "Service: $service_name" | tee -a "$output_file"
+  printf 'Service: %s\n' "$service_name" | tee -a "$output_file"
 else
-  echo "Service: not provided" | tee -a "$output_file"
+  printf 'Service: not provided\n' | tee -a "$output_file"
 fi
 
-echo "External IP Target: $external_ip" | tee -a "$output_file"
-echo "Test URL: $test_url" | tee -a "$output_file"
+printf 'External IP Target: %s\n' "$external_ip" | tee -a "$output_file"
+printf 'Test URL: %s\n' "$test_url" | tee -a "$output_file"
 
-echo | tee -a "$output_file"
-echo "--- Disk Usage ---" | tee -a "$output_file"
-df -h / 2>&1 | tee -a "$output_file"
+printf '\n--- Disk Usage ---\n' | tee -a "$output_file"
+df -h 2>&1 | tee -a "$output_file" \
+  || printf 'Disk usage information could not be collected\n' | tee -a "$output_file"
 
-echo | tee -a "$output_file"
-echo "--- Service Status ---" | tee -a "$output_file"
-
+printf '\n--- Service Status ---\n' | tee -a "$output_file"
 if [[ -n "$service_name" ]]; then
-  if systemctl status "$service_name" --no-pager 2>&1 | tee -a "$output_file"; then
-    echo "Result: service status collected" | tee -a "$output_file"
-  else
-    echo "Result: service status could not be collected" | tee -a "$output_file"
-  fi
+  systemctl status "$service_name" --no-pager 2>&1 | tee -a "$output_file" \
+    || printf 'Result: service status could not be collected\n' | tee -a "$output_file"
 else
-  echo "Result: skipped because no service name was provided" | tee -a "$output_file"
+  printf 'Result: skipped because no service name was provided\n' | tee -a "$output_file"
 fi
 
-echo | tee -a "$output_file"
-echo "--- Recent Journal Logs ---" | tee -a "$output_file"
-
+printf '\n--- Recent Journal Logs ---\n' | tee -a "$output_file"
 if [[ -n "$service_name" ]]; then
-  if journalctl -u "$service_name" -n 25 --no-pager 2>&1 | tee -a "$output_file"; then
-    echo "Result: recent journal logs collected" | tee -a "$output_file"
-  else
-    echo "Result: recent journal logs could not be collected" | tee -a "$output_file"
-  fi
+  journalctl -u "$service_name" -n 25 --no-pager 2>&1 | tee -a "$output_file" \
+    || printf 'Result: recent journal logs could not be collected\n' | tee -a "$output_file"
 else
-  echo "Result: skipped because no service name was provided" | tee -a "$output_file"
+  printf 'Result: skipped because no service name was provided\n' | tee -a "$output_file"
 fi
 
-echo | tee -a "$output_file"
-echo "--- Listening Ports ---" | tee -a "$output_file"
-ss -tuln 2>&1 | tee -a "$output_file"
+printf '\n--- Listening Ports ---\n' | tee -a "$output_file"
+ss -tuln 2>&1 | tee -a "$output_file" \
+  || printf 'Listening ports information could not be collected\n' | tee -a "$output_file"
 
-echo | tee -a "$output_file"
-echo "--- Routing Table ---" | tee -a "$output_file"
-ip route 2>&1 | tee -a "$output_file"
+printf '\n--- Routing Table ---\n' | tee -a "$output_file"
+ip route 2>&1 | tee -a "$output_file" \
+  || printf 'Routing table information could not be collected\n' | tee -a "$output_file"
 
-echo | tee -a "$output_file"
-echo "--- External IP Reachability ---" | tee -a "$output_file"
+printf '\n--- External IP Reachability ---\n' | tee -a "$output_file"
+ping -c 4 "$external_ip" 2>&1 | tee -a "$output_file" \
+  || printf 'External IP reachability check failed; external IP did not respond or could not be reached\n' | tee -a "$output_file"
 
-if ping -c 4 "$external_ip" 2>&1 | tee -a "$output_file"; then
-  echo "External IP reachability: PASS" | tee -a "$output_file"
-else
-  echo "External IP reachability: FAIL" | tee -a "$output_file"
-fi
+printf '\n--- External URL Reachability ---\n' | tee -a "$output_file"
+curl -sSI --max-time 5 "$test_url" 2>&1 | tee -a "$output_file" \
+  || printf 'External URL reachability check failed; external URL did not return a reachable HTTP response\n' | tee -a "$output_file"
 
-echo | tee -a "$output_file"
-echo "--- External URL Reachability ---" | tee -a "$output_file"
-
-if curl -sSI --max-time 5 "$test_url" 2>&1 | tee -a "$output_file"; then
-  echo "External URL reachability: PASS" | tee -a "$output_file"
-else
-  echo "External URL reachability: FAIL" | tee -a "$output_file"
-fi
-
-echo
-echo "Evidence saved to: $output_file"
+printf '\nEvidence saved to: %s\n' "$output_file"
