@@ -1,5 +1,8 @@
+/app-api-fixture
+/docs/cases/applications-apis
 tools/README.md
 artifact-queue.md
+
 
 !tools/bash/.gitkeep
 !tools/python/.gitkeep
