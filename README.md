@@ -27,7 +27,7 @@ Primary case-handling records used to practice issue framing, triage, troublesho
 <!-- markdownlint-disable MD060 -->
 |           |           |
 | --------- | --------- |
-|       **Linux**       | • [`service-will-not-start.md`](docs/cases/linux/service-will-not-start.md) |
+|       **Linux**       | • [`service-will-not-start.md`](docs/cases/linux/service-will-not-start.md)<br> • [`permissions-blocking-access.md`](docs/cases/linux/permissions-blocking-access.md) |
 |    **Networking**     | • [`invalid-default-route.md`](docs/cases/networking/invalid-default-route.md) |
 | **Identity & Access** | • [`password-reset-access-loss.md`](docs/cases/identity-access/password-reset-access-loss.md)<br> • [`account-unlock-root-cause.md`](docs/cases/identity-access/account-unlock-root-cause.md)<br> • [`policy-blocked-sign-in.md`](docs/cases/identity-access/policy-blocked-sign-in.md)<br> • [`suspicious-login-report.md`](docs/cases/identity-access/suspicious-login-report.md) |
 | **Windows Endpoint**  | • [`no-internet-dns-failure.md`](docs/cases/windows-endpoint/no-internet-dns-failure.md)<br> • [`application-install-blocked.md`](docs/cases/windows-endpoint/application-install-blocked.md)<br> • [`slow-pc.md`](docs/cases/windows-endpoint/slow-pc.md) |
