@@ -37,8 +37,8 @@ Primary case-handling records used to practice issue framing, triage, troublesho
 
 Reusable references that document repeatable issue patterns for future support work.
 
-- [`no-internet-dns-failure.md`](docs/kb/no-internet-dns-failure.md)
-- [`password-reset-access-loss.md`](docs/kb/password-reset-access-loss.md)
+- [`no-internet-dns-failure.md`](docs/kb-articles/no-internet-dns-failure.md)
+- [`password-reset-access-loss.md`](docs/kb-articles/password-reset-access-loss.md)
 
 ### 📋 Runbooks
 
@@ -61,7 +61,7 @@ Python scripts used to automate support and troubleshooting tasks.
 ## 🗂️ Repository Structure
 
 - [`docs/cases/`](docs/cases/) → simulated support cases
-- [`docs/kb/`](docs/kb/) → KB articles for repeatable issue patterns
+- [`docs/kb-articles/`](docs/kb-articles/) → KB articles for repeatable issue patterns
 - [`docs/runbooks/`](docs/runbooks/) → runbooks for repeatable support workflows
 - [`tools/bash/`](tools/bash/) → Bash scripts for common support and troubleshooting tasks
 - [`tools/python/`](tools/python/) → Python scripts for common support and troubleshooting tasks
