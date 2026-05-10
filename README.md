@@ -27,7 +27,7 @@ Primary case-handling records used to practice issue framing, triage, troublesho
 <!-- markdownlint-disable MD060 -->
 |           |           |
 | --------- | --------- |
-|       **Linux**       | • [`service-will-not-start.md`](docs/cases/linux/service-will-not-start.md)<br> • [`permissions-blocking-access.md`](docs/cases/linux/permissions-blocking-access.md) |
+|       **Linux**       | • [`service-will-not-start.md`](docs/cases/linux/service-will-not-start.md)<br> • [`service-running-application-unavailable.md`](docs/cases/linux/service-running-application-unavailable.md)<br> • [`permissions-blocking-access.md`](docs/cases/linux/permissions-blocking-access.md) |
 |    **Networking**     | • [`invalid-default-route.md`](docs/cases/networking/invalid-default-route.md)<br> • [`host-reachable-application-unreachable.md`](docs/cases/networking/host-reachable-application-unreachable.md) |
 | **Identity & Access** | • [`password-reset-access-loss.md`](docs/cases/identity-access/password-reset-access-loss.md)<br> • [`suspicious-login-report.md`](docs/cases/identity-access/suspicious-login-report.md)<br> • [`policy-blocked-sign-in.md`](docs/cases/identity-access/policy-blocked-sign-in.md)<br> • [`account-unlock-root-cause.md`](docs/cases/identity-access/account-unlock-root-cause.md) |
 | **Windows Endpoint**  | • [`application-install-blocked.md`](docs/cases/windows-endpoint/application-install-blocked.md)<br> • [`mapped-network-drive-unavailable.md`](docs/cases/windows-endpoint/mapped-network-drive-unavailable.md)<br> • [`no-internet-dns-failure.md`](docs/cases/windows-endpoint/no-internet-dns-failure.md)<br> • [`slow-pc.md`](docs/cases/windows-endpoint/slow-pc.md) |
