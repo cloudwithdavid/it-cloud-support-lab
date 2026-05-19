@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 # evidence-collect.sh
-# Reusable first-pass Linux networking and service evidence collection utility.
+# Server-side first-pass Linux networking and service evidence collection utility.
 #
-# Collects service status, recent service logs, listening ports, routing, and external reachability into a timestamped file.
+# Collects server evidence: service status, recent logs, target name resolution, routing, IP reachability, listening ports, and HTTP/HTTPS URL reachability into a timestamped file.
 #
-# Example:
-#   ./evidence-collect.sh -s cron -u https://cloudwithdavid.com -i 1.1.1.1
+# Examples:
+#   ./evidence-collect.sh -s cron -e cloudwithdavid.com -i 1.1.1.1
+#   ./evidence-collect.sh -s apache2 -e https://cloudwithdavid.com -i 8.8.8.8
 
 set -euo pipefail
 
@@ -22,43 +23,69 @@ run_command() {
   "$@" |& tee -a "$output_file"
 }
 
+usage() {
+  printf 'Usage: %s [-s <service-name>] [-i <target-ip>] [-e <endpoint>]\n\n' "$0"
+  printf 'Options:\n'
+  printf '  -s  Service name to check with systemctl and journalctl\n'
+  printf '  -i  Target IP address to check with ping. Default: 8.8.8.8\n'
+  printf '  -e  Endpoint hostname or HTTP/HTTPS URL to check. Default: https://example.com\n'
+  printf '  -h  Show this help message\n'
+}
+
+normalize_endpoint() {
+  local input="$1"
+  local host="$input"
+  local url="$input"
+
+  host="${host#http://}"
+  host="${host#https://}"
+  host="${host%%/*}"
+  host="${host%%:*}"
+
+  if [[ "$url" != http://* && "$url" != https://* ]]; then
+    url="https://$url"
+  fi
+
+  target_host="$host"
+  target_url="$url"
+}
+
 service_name=""
-external_ip="8.8.8.8"
-test_url="https://example.com"
+target_ip="8.8.8.8"
+target_endpoint="https://example.com"
+target_host=""
+target_url=""
 output_dir="evidence"
 
-while getopts ":s:i:u:h" opt; do
+while getopts ":s:i:e:h" opt; do
   case "$opt" in
     s)
       service_name="$OPTARG"
       ;;
     i)
-      external_ip="$OPTARG"
+      target_ip="$OPTARG"
       ;;
-    u)
-      test_url="$OPTARG"
+    e)
+      target_endpoint="$OPTARG"
       ;;
     h)
-      printf 'Usage: %s [-s service-name] [-i external-ip] [-u test-url]\n\n' "$0"
-      printf 'Options:\n'
-      printf '  -s  Service name to check with systemctl and journalctl\n'
-      printf '  -i  External IP to test with ping. Default: 8.8.8.8\n'
-      printf '  -u  Test URL to check with curl. Default: https://example.com\n'
-      printf '  -h  Show this help message\n'
+      usage
       exit 0
       ;;
     :)
       printf 'Error: option -%s requires a value\n' "$OPTARG"
-      printf 'Usage: %s [-s service-name] [-i external-ip] [-u test-url]\n' "$0"
+      usage
       exit 1
       ;;
     \?)
       printf 'Error: -%s is an invalid option\n' "$OPTARG"
-      printf 'Usage: %s [-s service-name] [-i external-ip] [-u test-url]\n' "$0"
+      usage
       exit 1
       ;;
   esac
 done
+
+normalize_endpoint "$target_endpoint"
 
 current_host="$(hostname)"
 current_user="$(whoami)"
@@ -72,18 +99,19 @@ output_file="${output_dir}/${file_timestamp}-${current_host}.txt"
 : > "$output_file"
 
 header "Collecting Evidence"
-write "Timestamp: $timestamp"
-write "Host: $current_host"
-write "User: $current_user"
+write "Timestamp:   $timestamp"
+write "Host:        $current_host"
+write "User:        $current_user"
 
 if [[ -n "$service_name" ]]; then
-  write "Service: $service_name"
+  write "Service:     $service_name"
 else
-  write 'Service: not provided'
+  write "Service:     not provided"
 fi
 
-write "External IP Target: $external_ip"
-write "Test URL: $test_url"
+write "Target IP:   $target_ip"
+write "Target Host: $target_host"
+write "Target URL:  $target_url"
 
 header "Service Status"
 if [[ -n "$service_name" ]]; then
@@ -101,20 +129,24 @@ else
   write "Result: skipped because no service name was provided"
 fi
 
-header "Listening Ports"
-run_command ss -tuln \
-  || write "Listening ports information could not be collected"
+header "Target Name Resolution"
+run_command getent hosts "$target_host" \
+  || write "Target name resolution check failed; target host could not be resolved"
 
 header "Routing Table"
 run_command ip route \
   || write "Routing table information could not be collected"
 
-header "External IP Reachability"
-run_command ping -c 4 "$external_ip" \
-  || write "External IP reachability check failed; external IP did not respond or could not be reached"
+header "Target IP Reachability"
+run_command ping -c 4 "$target_ip" \
+  || write "Target IP reachability check failed; target IP did not respond or could not be reached"
 
-header "External URL Reachability"
-run_command curl -sSI --max-time 5 "$test_url" \
-  || write "External URL reachability check failed; external URL did not return a reachable HTTP response"
+header "Listening Ports"
+run_command ss -tuln \
+  || write "Listening ports information could not be collected"
+
+header "Target URL Reachability"
+run_command curl -sSI --max-time 5 "$target_url" \
+  || write "Target URL reachability check failed; target URL did not return a reachable HTTP/HTTPS response"
 
 printf 'Evidence saved to: %s\n' "$output_file"
